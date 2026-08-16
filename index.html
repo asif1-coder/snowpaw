@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnowPaw's Little Universe 🐾</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="floatingPaws"></div>
+
+<audio id="music" loop>
+    <source src="music/pink-panther.mp3" type="audio/mpeg">
+</audio>
+
+<!-- OPENING -->
+<section class="scene opening active" id="opening">
+    <div class="decor cat-one">🐱</div>
+    <div class="decor cat-two">🐈</div>
+    <div class="decor yarn-one">🧶</div>
+    <div class="decor fish-one">🐟</div>
+
+    <div class="main-card">
+        <div class="small-title">🐾 A LITTLE CAT WORLD</div>
+
+        <img class="main-cat" src="images/cute.jpg">
+
+        <h1>For the prettiest <span>SnowPaw</span> 💙</h1>
+
+        <p class="psps">pspspspsps... 🐾</p>
+
+        <p>A tiny cat has something very important to show you.</p>
+
+        <button id="startButton">🐾 Follow the cat</button>
+    </div>
+</section>
+
+
+<!-- CATCH GAME -->
+<section class="scene pink-scene" id="catchGame">
+    <div class="main-card">
+
+        <div class="small-title pink">😼 CAT CHASE</div>
+
+        <img class="corner-cat" src="images/mischievous.jpg">
+
+        <h2>Catch the troublemaker!</h2>
+
+        <p>
+            She knows some secrets about you...
+            but she's running away. 😭
+        </p>
+
+        <div class="game-area" id="catchArea">
+            <img id="runningCat" src="images/mischievous.jpg">
+            <span class="game-paw">🐾</span>
+        </div>
+
+        <div class="score">
+            Catches: <span id="catchScore">0</span> / 3
+        </div>
+
+        <div id="catchMessage" class="game-message"></div>
+    </div>
+</section>
+
+
+<!-- REWARD 1 -->
+<section class="scene reward pink-scene" id="reward1">
+    <div class="reward-card">
+
+        <img src="images/happy.jpg">
+
+        <div class="reward-icon">🎁</div>
+
+        <h2>You caught her! 😭🐾</h2>
+
+        <p>Fineee... she admits it.</p>
+
+        <p class="special">
+            SnowPaw is dangerously cute
+            and this cat has evidence. 💗
+        </p>
+
+        <button data-next="sleepGame">Continue 🐾</button>
+    </div>
+</section>
+
+
+<!-- SLEEP GAME -->
+<section class="scene purple-scene" id="sleepGame">
+    <div class="main-card">
+
+        <div class="small-title purple">😴 HIDE & SEEK 🌙✨</div>
+
+        <h2>Find the sleepy kitty! 😴🐱</h2>
+
+        <p>
+            She heard someone say "bedtime"
+            and immediately disappeared. 😂
+        </p>
+
+        <p class="sleep-emojis">
+            🌙 ⭐ ✨ 🛏️ 🧸 ☁️ 😴 💤 🐾
+        </p>
+
+        <div class="hide-area">
+
+            <div class="sleep-decoration">🛏️</div>
+            <div class="sleep-decoration second">🧸</div>
+            <div class="sleep-decoration third">🧶</div>
+            <div class="sleep-decoration moon">🌙</div>
+            <div class="sleep-decoration star1">⭐</div>
+            <div class="sleep-decoration star2">✨</div>
+            <div class="sleep-decoration cloud">☁️</div>
+
+            <div class="hidden-cat" id="hiddenCat">
+                <img src="images/sleepy.jpg">
+            </div>
+        </div>
+
+        <div id="sleepMessage" class="game-message">
+            Shhh... she's somewhere around here. 👀🤫
+        </div>
+
+    </div>
+</section>
+
+
+<!-- REWARD 2 -->
+<section class="scene reward purple-scene" id="reward2">
+    <div class="reward-card">
+
+        <img src="images/sleepy.jpg">
+
+        <div class="reward-icon">🌙💤</div>
+
+        <h2>You found sleepy kitty! 😴🐾</h2>
+
+        <p>
+            She was hiding because apparently
+            sleeping is a full-time job. 😂
+        </p>
+
+        <p class="special">
+            🌙✨ May your sleep be peaceful,
+            your dreams be cute,
+            and your blanket always be perfectly warm. 🛏️🧸💤
+        </p>
+
+        <button data-next="starGame">
+            Next little adventure ✨🐾
+        </button>
+    </div>
+</section>
+
+
+<!-- STAR GAME -->
+<section class="scene blue-scene" id="starGame">
+    <div class="main-card">
+
+        <div class="small-title blue">⭐ CATCH THE STARS</div>
+
+        <img class="game-cat" src="images/cute.jpg">
+
+        <h2>Collect 7 little stars!</h2>
+
+        <p>Each star has a tiny message for you. 💙</p>
+
+        <div class="star-area" id="starArea"></div>
+
+        <div class="score">
+            Stars: <span id="starScore">0</span> / 7
+        </div>
+
+        <div id="starMessage" class="game-message"></div>
+    </div>
+</section>
+
+
+<!-- REWARD 3 -->
+<section class="scene reward blue-scene" id="reward3">
+    <div class="reward-card">
+
+        <img src="images/happy.jpg">
+
+        <div class="reward-icon">✨🌌</div>
+
+        <h2>You collected them all!</h2>
+
+        <p>
+            Seven stars for seven little reasons
+            to smile today.
+        </p>
+
+        <p class="special">
+            If I could, I'd put the whole sky
+            around you just to remind you
+            how special you are. 💙✨
+        </p>
+
+        <button data-next="gamerGame">
+            Player 2, enter 🎮
+        </button>
+    </div>
+</section>
+
+
+<!-- GAMER GAME -->
+<section class="scene gamer-scene" id="gamerGame">
+    <div class="main-card">
+
+        <div class="small-title cyan">
+            🎮 SNOWPAW COMMAND CENTER
+        </div>
+
+        <img class="game-cat" src="images/happy.jpg">
+
+        <h2>She gives an order. 🫡</h2>
+
+        <p>
+            SnowPaw has spoken.
+            What should you do? 😭
+        </p>
+
+        <div class="command-box">
+            <span>👑 SNOWPAW:</span>
+            <strong>"Come here."</strong>
+        </div>
+
+        <div class="choices">
+
+            <button class="wrong">
+                Ignore her 😤
+            </button>
+
+            <button class="wrong">
+                Pretend I didn't hear 😶
+            </button>
+
+            <button id="yesButton">
+                YES MA'AM 🫡🐾
+            </button>
+
+        </div>
+
+        <div id="gamerMessage" class="game-message"></div>
+    </div>
+</section>
+
+
+<!-- REWARD 4 -->
+<section class="scene reward gamer-scene" id="reward4">
+    <div class="reward-card">
+
+        <img src="images/mischievous.jpg">
+
+        <div class="reward-icon">🫡👑</div>
+
+        <h2>Excellent soldier. 😂</h2>
+
+        <p>
+            You know the rules.
+        </p>
+
+        <p class="special">
+            She orders. 👑<br>
+            You listen. 🫡<br>
+            Everyone goes home happy. 😭💙
+        </p>
+
+        <button data-next="bossGame">
+            Face the FINAL BOSS 👑
+        </button>
+    </div>
+</section>
+
+
+<!-- HARDER BOSS GAME -->
+<section class="scene gold-scene" id="bossGame">
+
+    <div class="main-card">
+
+        <div class="small-title gold">
+            👑 FINAL BOSS BATTLE 👑
+        </div>
+
+        <h2 id="bossTitle">Defeat SnowPaw's Guard Cat!</h2>
+
+        <div class="boss-box">
+
+            <div class="crown">👑</div>
+
+            <img id="bossCat" src="images/mischievous.jpg">
+
+            <div class="boss-shield">🛡️</div>
+
+        </div>
+
+        <div class="boss-health">
+            <div id="healthBar"></div>
+        </div>
+
+        <p id="bossInstruction">
+            The guard cat has 5 shields!
+            Tap the cat when its shield disappears. ⚔️🐱
+        </p>
+
+        <div class="boss-buttons">
+
+            <button id="attackButton">
+                ⚔️ ATTACK
+            </button>
+
+            <button id="healButton">
+                💙 HEAL
+            </button>
+
+        </div>
+
+        <div class="boss-stats">
+            ❤️ You: <span id="playerHealth">3</span>
+            &nbsp;&nbsp; 🛡️ Boss: <span id="bossHealth">5</span>
+        </div>
+
+        <div id="bossMessage" class="game-message"></div>
+
+    </div>
+</section>
+
+
+<!-- REWARD 5 -->
+<section class="scene reward gold-scene" id="reward5">
+    <div class="reward-card">
+
+        <img src="images/romantic.jpg">
+
+        <div class="reward-icon">🏆👑</div>
+
+        <h2>FINAL BOSS DEFEATED! 😭🔥</h2>
+
+        <p>
+            You survived the hardest battle
+            in SnowPaw's kingdom.
+        </p>
+
+        <p class="special">
+            Unfortunately... the boss still has
+            permanent control over your heart. 😂💙
+        </p>
+
+        <button data-next="heartGame">
+            Continue ❤️
+        </button>
+    </div>
+</section>
+
+
+<!-- HEART GAME -->
+<section class="scene heart-scene" id="heartGame">
+    <div class="main-card">
+
+        <div class="small-title pink">❤️ COLLECT THE HEARTS</div>
+
+        <img class="game-cat" src="images/romantic.jpg">
+
+        <h2>Collect 5 hearts.</h2>
+
+        <p>
+            Each heart carries something
+            I appreciate about you.
+        </p>
+
+        <div class="heart-area" id="heartArea"></div>
+
+        <div class="score">
+            Hearts: <span id="heartScore">0</span> / 5
+        </div>
+
+        <div id="heartMessage" class="game-message"></div>
+    </div>
+</section>
+
+
+<!-- REWARD 6 -->
+<section class="scene reward heart-scene" id="reward6">
+    <div class="reward-card">
+
+        <img src="images/romantic.jpg">
+
+        <div class="reward-icon">❤️🐾</div>
+
+        <h2>You collected all the love.</h2>
+
+        <p class="special">
+            Every heart was tiny...
+            but none of them could hold
+            how much I appreciate you.
+        </p>
+
+        <p>
+            And yes, there's still one more thing
+            I want to show you. 🥺
+        </p>
+
+        <button data-next="worldGame">
+            One more 🐾
+        </button>
+    </div>
+</section>
+
+
+<!-- CONNECT GAME -->
+<section class="scene world-scene" id="worldGame">
+
+    <div class="main-card">
+
+        <div class="small-title blue">
+            🌐 OUR LITTLE WORLD
+        </div>
+
+        <h2>Bring us together. 💙</h2>
+
+        <p>
+            Two places.<br>
+            Two screens.<br>
+            One little world.
+        </p>
+
+        <p class="special">
+            Move both cats toward each other. 🐾
+        </p>
+
+        <div class="world-area" id="worldArea">
+
+            <div class="world-cat player-cat" id="playerCat">
+                <img src="images/cute.jpg">
+                <span>Me 🐾</span>
+            </div>
+
+            <div class="world-cat snowpaw-cat" id="snowpawCat">
+                <img src="images/sleepy.jpg">
+                <span>SnowPaw 😴💙</span>
+            </div>
+
+        </div>
+
+        <div class="move-controls">
+
+            <div>
+                <p>🐾 Move Me</p>
+                <button id="playerLeft">⬅️</button>
+                <button id="playerRight">➡️</button>
+            </div>
+
+            <div>
+                <p>💙 Move SnowPaw</p>
+                <button id="snowLeft">⬅️</button>
+                <button id="snowRight">➡️</button>
+            </div>
+
+        </div>
+
+        <div id="worldMessage" class="game-message">
+            They're still too far apart... 🥺
+        </div>
+
+    </div>
+</section>
+
+
+<!-- REWARD 7 -->
+<section class="scene reward world-scene" id="reward7">
+    <div class="reward-card">
+
+        <div class="connected-cats">
+            <img src="images/cute.jpg">
+            <span>💙</span>
+            <img src="images/sleepy.jpg">
+        </div>
+
+        <div class="reward-icon">🌐💙</div>
+
+        <h2>You brought us together. 🥺</h2>
+
+        <p>
+            Two places...
+            but somehow one little world.
+        </p>
+
+        <p class="special">
+            We might have met through a screen,
+            but everything you've made me feel is real. 💙
+        </p>
+
+        <button data-next="letter">
+            Now... just listen to me 💌
+        </button>
+    </div>
+</section>
+
+
+<!-- LOVE LETTER -->
+<section class="scene letter-scene" id="letter">
+
+    <div class="main-card letter-card">
+
+        <img class="letter-cat" src="images/romantic.jpg">
+
+        <div class="small-title pink">
+            💌 FROM ME
+        </div>
+
+        <h2>Okay...</h2>
+
+        <p class="special">
+            The cats have talked enough.
+        </p>
+
+        <p>
+            This part is from me. 💗
+        </p>
+
+        <div class="letter">
+
+            <p>My SnowPaw, 💗</p>
+
+            <p>
+                I don't even know where to begin because
+                there are so many things I love about you.
+            </p>
+
+            <p>
+                You're beautiful, caring, hardworking,
+                funny, sometimes completely chaotic...
+                and somehow you're still my favorite person.
+            </p>
+
+            <p>
+                I love the little things about you.
+                The way you care.
+                The way you check on me.
+                The way you somehow make me feel looked after.
+            </p>
+
+            <p>
+                I love playing games with you.
+                I love our stupid conversations.
+                I love teasing you.
+            </p>
+
+            <p>
+                And yes...
+                you're technically the noob,
+                but somehow I'm still the one
+                who ends up listening to you. 😂
+            </p>
+
+            <p>
+                Even though we're separated by distance,
+                you've never felt like someone who is far away.
+            </p>
+
+            <p>
+                We might have met through a screen,
+                but everything you've made me feel has been real.
+            </p>
+
+            <p>
+                Thank you for being you.
+                Thank you for caring about me.
+            </p>
+
+            <p class="big-love">
+                I love you, SnowPaw. 💗
+            </p>
+
+        </div>
+
+        <button data-next="sleepFinal">
+            One last sleepy kitty... 🥺
+        </button>
+
+    </div>
+</section>
+
+
+<!-- FINAL SLEEPY -->
+<section class="scene sleepy-scene" id="sleepFinal">
+
+    <div class="main-card">
+
+        <img class="final-sleepy-cat" src="images/sleepy.jpg">
+
+        <div class="small-title blue">
+            😴 SLEEPY CAT MODE 🌙
+        </div>
+
+        <h2>Okay, SnowPaw... 😴🐾</h2>
+
+        <p class="sleep-emojis">
+            🌙 ⭐ ✨ 💤 🛏️ 🧸 ☁️ 😴 🐱 🐾
+        </p>
+
+        <p>
+            You've read enough. 😂
+        </p>
+
+        <p class="special">
+            Go get some sleep before those
+            dark circles start another war. 😭
+        </p>
+
+        <p>
+            🌙 Sleep well.<br>
+            🧸 Hug your pillow.<br>
+            ☁️ Get cozy.<br>
+            💤 Dream something beautiful.<br>
+            🐾 And don't forget to take care of yourself.
+        </p>
+
+        <p class="blue-text">
+            Because someone out here
+            really cares about you. 💙
+        </p>
+
+        <button data-next="final">
+            One last thing 💙
+        </button>
+
+    </div>
+</section>
+
+
+<!-- FINAL -->
+<section class="scene final-scene" id="final">
+
+    <div class="main-card">
+
+        <div class="all-cats">
+            <img src="images/cute.jpg">
+            <img src="images/happy.jpg">
+            <img src="images/mischievous.jpg">
+            <img src="images/romantic.jpg">
+            <img src="images/sleepy.jpg">
+        </div>
+
+        <div class="small-title pink">
+            🐾 OUR LITTLE UNIVERSE
+        </div>
+
+        <h1>SnowPaw 💙</h1>
+
+        <p class="pink-text">
+            My favorite person to annoy.
+        </p>
+
+        <p class="blue-text">
+            My favorite person to listen to.
+        </p>
+
+        <p class="purple-text">
+            My favorite gamer to lose with. 😂
+        </p>
+
+        <p class="gold-text">
+            My favorite boss. 👑
+        </p>
+
+        <p class="cyan-text">
+            And my favorite girl.
+        </p>
+
+        <h2 class="big-love">
+            I love you, SnowPaw. 💗
+        </h2>
+
+        <p>
+            Distance is just the space between two places.
+        </p>
+
+        <p class="special">
+            It doesn't decide how close
+            two people can feel.
+        </p>
+
+        <div class="final-paws">
+            🐾 💙 🐾 💕 🐾
+        </div>
+
+    </div>
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html> 
